@@ -1,0 +1,22 @@
+#news-title {
+    font-size: 40px;
+}
+
+#news-text {
+    font-size: 20px;
+}
+
+#mars-image {
+    height: 100px;
+    width: 100px;
+}
+
+#weather {
+    position: relative; 
+    top:40px;
+    bottom: 40px;
+}
+
+#news-header {
+    color: red;
+}
