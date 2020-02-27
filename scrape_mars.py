@@ -52,15 +52,24 @@ def scrape():
     facts_table = pd.read_html(facts_url)
     facts_df = pd.DataFrame(facts_table[0])
     facts_df = facts_df.rename(columns = {0:'Attribute', 1:'Value'})
-    scrape_content[col2row0] = facts_df['Value'][0]
-    scrape_content[col2row1] = facts_df['Value'][1]
-    scrape_content[col2row2] = facts_df['Value'][2]
-    scrape_content[col2row3] = facts_df['Value'][3]
-    scrape_content[col2row4] = facts_df['Value'][4]
-    scrape_content[col2row5] = facts_df['Value'][5]
-    scrape_content[col2row6] = facts_df['Value'][6]
-    scrape_content[col2row7] = facts_df['Value'][7]
-    scrape_content[col2row8] = facts_df['Value'][8]
+    scrape_content['col1row0'] = facts_df['Attribute'][0]
+    scrape_content['col1row1'] = facts_df['Attribute'][1]
+    scrape_content['col1row2'] = facts_df['Attribute'][2]
+    scrape_content['col1row3'] = facts_df['Attribute'][3]
+    scrape_content['col1row4'] = facts_df['Attribute'][4]
+    scrape_content['col1row5'] = facts_df['Attribute'][5]
+    scrape_content['col1row6'] = facts_df['Attribute'][6]
+    scrape_content['col1row7'] = facts_df['Attribute'][7]
+    scrape_content['col1row8'] = facts_df['Attribute'][8]
+    scrape_content['col2row0'] = facts_df['Value'][0]
+    scrape_content['col2row1'] = facts_df['Value'][1]
+    scrape_content['col2row2'] = facts_df['Value'][2]
+    scrape_content['col2row3'] = facts_df['Value'][3]
+    scrape_content['col2row4'] = facts_df['Value'][4]
+    scrape_content['col2row5'] = facts_df['Value'][5]
+    scrape_content['col2row6'] = facts_df['Value'][6]
+    scrape_content['col2row7'] = facts_df['Value'][7]
+    scrape_content['col2row8'] = facts_df['Value'][8]
 
 
     #scrape hemisphere data
@@ -109,7 +118,7 @@ def scrape():
     #{"title": valles_title, "img_url": valles_image_url},
     #]
 
-    browser.quit
+    browser.quit()
 
     return scrape_content
 

@@ -2,52 +2,90 @@
 <html lang="en-us">
 
 <head>
-  <meta charset="UTF-8">
- 
-  <title>Mars!</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="mars.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Mars!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='m_styles.css')  }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
-  <div class="container text-center">
-    <h1 class="jumbotron">Mission to Mars</h1>
-    <div class="col-md-4">
-        <h1 class="header" id="news-header">Latest Mars News</h1>
-        <div class="text-left" id="news-title">{{mars.news_title}}</div>
-        <div class="text-left" id="news-text">{{mars.news_paragraph}}</div>
-      
+  <div class="container text-center" id="main-background">
+        <h1 class="jumbotron">Mission to Mars</h1>
+        <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="header" id="news-header">Latest Mars News</h1>
+                <div class="text-left" id="news-title">{{mars.news_title}}</div>
+                <div class="text-left" id="news-text">{{mars.news_paragraph}}</div>
+            
+            </div>
+        </div>
+        <div class="row">
+            <div id="weather" class= "col-md-6">
+                <h2 class="header">Current Weather on Mars</h2>
+                <div class="text">{{mars.tweet}}</div>
+            </div>
+            <div class= "col-md-6">
+                <table id="table-1">
+                    <tr>
+                        <th id="table-cell">Attributes</th>
+                        <th id="table-cell">Value</th>
+                    </tr>
+                    <tr>
+                        <td id="table-cell">{{mars.col1row0}}</td>
+                        <td id="table-cell">{{mars.col2row0}}</td>
+                    </tr>
+                    <tr>
+                        <td id="table-cell">{{mars.col1row1}}</td>
+                        <td id="table-cell">{{mars.col2row1}}</td>
+                    </tr>
+                    <tr>
+                        <td id="table-cell">{{mars.col1row2}}</td>
+                        <td id="table-cell">{{mars.col2row2}}</td>
+                    </tr>
+                    <tr>
+                        <td id="table-cell">{{mars.col1row3}}</td>
+                        <td id="table-cell">{{mars.col2row3}}</td>
+                    </tr>
+                    <tr>
+                        <td id="table-cell">{{mars.col1row4}}</td>
+                        <td id="table-cell">{{mars.col2row4}}</td>
+                    </tr>
+                    <tr>
+                        <td id="table-cell">{{mars.col1row5}}</td>
+                        <td id="table-cell">{{mars.col2row5}}</td>
+                    </tr>
+                    <tr>
+                        <td id="table-cell">{{mars.col1row6}}</td>
+                        <td id="table-cell">{{mars.col2row6}}</td>
+                    </tr>
+                    <tr>
+                        <td id="table-cell">{{mars.col1row7}}</td>
+                        <td id="table-cell">{{mars.col2row7}}</td>
+                    </tr>
+                    <tr>
+                        <td id="table-cell">{{mars.col1row8}}</td>
+                        <td id="table-cell">{{mars.col2row8}}</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <h3 class="header">Mars Featured Image</h3>
+                <img id="mars-image" src="{{ mars.featured_image_url }}" alt="Mars Image">
+        
+              </div>
+        </div>
+        
     </div>
-  </div>
-  <div class="col-12">
-    <div class= "col-md-6">
-        <h2 class="header">Current Weather on Mars</h2>
-        <div id="weather" class="text">{{mars.tweet}}</div>
-    </div>
-    <div class= "col-md-6">
-        <table>
-            <tr>
-                <th>Attributes</th>
-            </tr>
-            <tr>
-                <td>{{mars.col2row0}}</td>
-            </tr>
-        </table>
-    </div>
+  
 
-    </div>
-
-  <div class="container">
-      <div class="col-md-9">
-        <h3 class="header">Mars Featured Image</h3>
-        <img id="mars-image" src={{mars.featured_image_url}} alt="Mars Image">
-
-      </div>
-  </div>
+  
   
 </body>
 
