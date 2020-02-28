@@ -36,21 +36,25 @@
 
 
 #cerberus {
-    height: 100px;
-    width: 100px;
+    height: 400px;
+    width: 400px;
 }
 
 #schiaparelli {
-    height: 100px;
-    width: 100px;
+    height: 400px;
+    width: 400px;
 }
 
 #syrtis {
-    height: 100px;
-    width: 100px;
+    height: 400px;
+    width: 400px;
 }
 
 #valles {
-    height: 100px;
-    width: 100px;
+    height: 400px;
+    width: 400px;
+}
+
+#hemispheres {
+    padding-top: 50px;
 }
